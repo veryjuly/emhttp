@@ -2,12 +2,13 @@
 #include <stdio.h>
 #include <string.h>
 #include "emhttp.h"
-
+#include <time.h>
 #ifdef _WIN32
 #include <WinSock2.h>
 #pragma warning(disable:4996)
 #else
 #include <sys/socket.h>
+
 #endif
 
 
@@ -43,10 +44,16 @@ int webapi_http_exit(void * arg, int s, char * method, char * url, char * query)
 
 int webapi_get_json(void * arg, int s, char * method, char * url, char * query)
 {
-	char * json = "{app=\"emhttp\",ver=0.1}";
+	char strtime[64]="";
+	time_t timer = time(NULL);
+	strftime(strtime, sizeof(strtime), "%Y-%m-%d %H:%M:%S", localtime(&timer));
+	char buf[1024];
+	char * json = "{\"app\":\"emhttp\",\"ver\":0.1,\"time\":\"%s\"}";
+	sprintf(buf, json, strtime);
 	discardheaders(s);
 	headers(s, "application/json");
-	send(s, json, strlen(json), 0);
+	send(s, buf, strlen(buf), 0);
+
 	return 0;
 }
 

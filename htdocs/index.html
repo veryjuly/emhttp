@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <HTML>
 <meta charset="utf-8">
-<TITLE>salvage</TITLE>
+<TITLE>emhttp</TITLE>
 <link href="style.css" rel="stylesheet" type="text/css">
 
 <script src="jquery-1.8.3.min.js" type="text/javascript"></script>
@@ -9,17 +9,20 @@
 
 <script type="text/javascript">
 /*定义一个获取参数并显示出来的函数*/
-function get_param() 
+function get_json() 
 { 
-	//$.getJSON ("getjson.wpi",function(json,status){
-	$.get("getparam.api",function(json,status){			
-		$("#info").val(json.app);	 		 
+
+	$.get("/getjson.wpi",function(json,status){	
+	$("#info").html("bbbbbb");		
+		$("#info").html(json.app);	
+		$("#info2").html(json.ver);	
+		$("#info3").html(json.time);	 		 
 	  });
 
 } ;
 
 $(document).ready(function(){
-	get_param();
+	get_json();
 	//window.setInterval(ontime,2000); 	
 });
 </script>
@@ -27,12 +30,16 @@ $(document).ready(function(){
 
 <BODY>
 <div class="page_main">
+<h2 class="title">emhttp 嵌入式http服务模块 </h2>
 
-  
-  <p id="info"></p>
-  <p >
-
-  <pre id="size">  </pre></p>
+<p>appname:<span id="info">1</span>
+  </p>
+<p>ver:<span id="info2">2</span>
+  </p>
+<p>当前时间:<span id="info3">3</span>
+</p>
+<p >
+</p>
   <hr>
   <footer>Copyright © 2016 非常七月. All rights reserved.</footer>
 </div>
