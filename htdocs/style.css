@@ -1,0 +1,103 @@
+@charset "utf-8";
+
+body {
+	font-family: "微软雅黑";
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 30px;
+	background-color: #4D4C4C;
+}
+
+a:link {
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+}
+a:active {
+	text-decoration: none;
+}
+
+.title{
+	olor: #3C3D3D; 
+	font-size: x-large; 
+	text-align: center;
+}
+
+
+.text{
+	olor: #3C3D3D; 
+	font-size: large; 
+}
+
+p{
+	text-indent: 2em; 	
+}
+.page_main{
+
+	padding-top: 5px;
+	padding-right: 40px;
+	padding-left: 40px;
+	padding-bottom: 5px;
+	background-color: #A6A6A6;
+}
+
+.label_param{
+	text-align: justify;
+	width: 129px;
+}
+
+footer{
+	text-align: center;
+
+}
+
+.div_table {
+	display: table;
+	border: thin solid #EFEFEF;
+	width: 100%;
+}
+
+.table_row {
+	display: table-row;
+}
+
+.table_cell {
+	display: table-cell;
+	padding-left:10px;
+	border-bottom: thin solid #E7E7E7;	
+}
+.table_cell_cmdbutton {
+	display: table-cell;
+}
+
+.col_1{
+	text-align: right;
+	width: 6em;
+}
+.col_2{
+	text-align: left;
+	width: 16em;
+}
+#cmd_pandin{
+	padding-left:20px;
+	display: table-cell;
+	text-align: right;
+	width: 6em;
+}
+.input_arg{
+	width: 100%;
+	font-size: large;
+	
+}
+
+
+.cmd_button{
+	width:8em;
+	height:2em;
+	font-size: large;
+	
+}
